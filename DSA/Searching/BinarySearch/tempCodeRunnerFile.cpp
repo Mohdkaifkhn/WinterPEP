@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+
+
+    vector<int>arr = {1,6,5,4,2,1,5};
+    int n = arr.size();
+    int low = 0;
+    int high = n-1;
+    int ans = -1;
+    while(low<=high){
+        int mid = low + (high-low)/2;
+        if(arr[mid] > arr[mid+1]){
+            ans = mid;
+            high = mid-1;
+        }
+        else{
+            low = mid+1;
+        }
+    }
+    cout<<arr[ans];
+    
+    
+    return 0;
+}
